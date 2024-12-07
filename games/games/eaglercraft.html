@@ -13,6 +13,24 @@
       <a href="/neocities-frenchfrysays3/Games/games.html">Games</a>
       <a href="/neocities-frenchfrysays3/Apps/apps.html">Apps</a>
     </div>
-    <iframe src="https://turtletown71.github.io/" height=715px width=1422px></iframe>
+    <script>
+      if(document.location.href.startsWith("file:")) {
+        alert("You're not supposed to 'open' this file in your browser. Please upload this folder to your HTTP(s) server and access it via the internet. This is not a bug, please read the documentation");
+      } else {
+          window.addEventListener("load", function(){
+            window.minecraftOpts = ["game_frame","https://turtletown71.github.io/assets.epk"];
+            (function(){
+              var q = window.location.search;
+                if(typeof q === 'string' && q.startsWith("?")) {
+              	q = new URLSearchParams(q);
+              	var s = q.get("server");
+              	if(s) window.minecraftOpts.push(s);
+            }
+       })();
+       main();
+       });}
+     </script>
+     <div id=game_frame>
+    </div>
   </body>
 </html>
